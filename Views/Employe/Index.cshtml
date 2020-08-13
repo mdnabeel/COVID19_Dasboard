@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Covid19_Dashboard.Models.Employe>
+@{
+    ViewBag.Title = "Employees";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Employees</h2>
+
+@if (!Model.Any())
+{
+    <p>We don't have any Employees yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        
+        <tbody>
+            @foreach (var employe in Model)
+            { 
+                <tr>
+                    <td>@Html.ActionLink(employe.Name , "Details", "Employe", new { ID = employe.Id }, null)</td>
+                    <td>@employe.EmpNo</td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+}

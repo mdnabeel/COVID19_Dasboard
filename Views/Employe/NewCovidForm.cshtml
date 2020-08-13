@@ -1,0 +1,84 @@
+﻿@model Covid19_Dashboard.ViewModels.CovidFormViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Enter Your Details</h2>
+
+@using (Html.BeginForm("Save", "Employe"))
+{
+    <table class="table table-borderless table-responsive">
+
+        <tbody>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CovidStatus.EmployeId)
+                        @Html.DropDownListFor(m => m.CovidStatus.EmployeId, new SelectList(Model.Employes, "Id", "Name"), "Select Your Name", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CovidStatus.EmployeId)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CovidStatus.CovidCategoryId)
+                        @Html.DropDownListFor(m => m.CovidStatus.CovidCategoryId, new SelectList(Model.CovidCategorys, "Id", "CategoryName"), "Select COVID Category", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CovidStatus.CovidCategoryId)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CovidStatus.CovidPositiveAt500M)
+                        @Html.TextBoxFor(m => m.CovidStatus.CovidPositiveAt500M, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CovidStatus.CovidPositiveAt500M)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CovidStatus.CovidPositiveAt1KM)
+                        @Html.TextBoxFor(m => m.CovidStatus.CovidPositiveAt1KM, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CovidStatus.CovidPositiveAt1KM)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CovidStatus.CovidPositiveAt2KM)
+                        @Html.TextBoxFor(m => m.CovidStatus.CovidPositiveAt2KM, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CovidStatus.CovidPositiveAt2KM)
+                    </div>
+                </td>
+
+                <td>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CovidStatus.CovidPositiveAt5KM)
+                        @Html.TextBoxFor(m => m.CovidStatus.CovidPositiveAt5KM, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CovidStatus.CovidPositiveAt5KM)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CovidStatus.CovidPositiveAt10KM)
+                        @Html.TextBoxFor(m => m.CovidStatus.CovidPositiveAt10KM, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CovidStatus.CovidPositiveAt10KM)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CovidStatus.DutyPlaceId)
+                        @Html.DropDownListFor(m => m.CovidStatus.DutyPlaceId, new SelectList(Model.DutyPlaces, "Id", "PlaceOfDuty"), "Select Place Of Duty", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.CovidStatus.DutyPlaceId)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CovidStatus.AnythingReported)
+                        @Html.TextAreaFor(m => m.CovidStatus.AnythingReported, new { @class = "form-control", @rows = "3" })
+                    </div>
+                    @Html.HiddenFor(m => m.CovidStatus.ID)
+                    @Html.AntiForgeryToken()
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    @section scripts
+{
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+}
+

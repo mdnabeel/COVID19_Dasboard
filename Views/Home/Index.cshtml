@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-3 col-md-offset-2">
+            <p><a class="btn btn-primary btn-lg btn-block" @Html.ActionLink("Add Your Arogya Status", "NewCovidForm", "Employe")</a></p>
+        </div>
+
+        <div class="col-md-3 col-md-offset-2">
+            <p><a class="btn btn-primary btn-lg btn-block" @Html.ActionLink("Employees COVID Status","Index","Employe")</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-md-offset-2 ">
+            <p><a class="btn btn-primary btn-lg btn-block" href="https://www.covid19india.org/">Add New Employee &raquo;</a></p>
+        </div>
+        <div class="col-md-3 col-md-offset-2">
+            <p><a class="btn btn-primary btn-lg btn-block" style="font-size:1.2em" href="https://www.covid19india.org/">COVID-19 India Dashboard &raquo;</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-md-offset-2">
+            <p><a class="btn btn-primary btn-lg btn-block" href="https://covidly.com/">Edit Employee Details &raquo;</a></p>
+        </div>
+        <div class="col-md-3 col-md-offset-2">
+            <p><a class="btn btn-primary btn-lg btn-block" style="font-size:1.16em" href="https://covidly.com/">COVID-19 World Dashboard &raquo;</a></p>
+        </div>
+    </div>
+</div>
